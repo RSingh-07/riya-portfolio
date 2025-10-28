@@ -1,0 +1,756 @@
+body {
+    margin: 0;
+    font-family: Arial;
+}
+
+
+/* ---------------- HEADER & NAVBAR ---------------- */
+header {
+    position: fixed;
+    top: 30px;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 7vh;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 40px;
+    height: 100%;
+    padding-right: 40px;
+}
+
+nav i {
+    color: white;
+    font-size: 2rem;
+}
+
+/* Glow effect on nav links */
+nav a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    z-index: 0;
+}
+
+nav a:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+nav a:hover:before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* ---------------- HOME SECTION ---------------- */
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+#home {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+#home img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.intro-box {
+    position: absolute;
+    top: 30%;
+    left: 8%;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    width: 450px;
+    max-width: 90%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease-in-out;
+    animation: rainbowGlow 4s linear infinite alternate;
+}
+
+@keyframes rainbowGlow {
+    0% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #ff0000; }
+    16% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #ff7300; }
+    33% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #fffb00; }
+    50% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #48ff00; }
+    66% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #002bff; }
+    83% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #7a00ff; }
+    100% { box-shadow: 0 4px 25px rgba(0,0,0,0.4), 0 0 30px #ff00c8; }
+}
+
+/* Resume Download Button */
+.download-btn {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bolder;
+    padding: 1rem 2rem;
+    color: #684314;
+    margin: 0 auto;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+.download-btn:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    border-radius: 12px;
+    opacity: 1;
+    animation: glowing 20s linear infinite;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.download-btn i {
+    margin-left: 0.5rem;
+    color: #684314;
+}
+
+/* ---------------- ABOUT SECTION ---------------- */
+#about {
+    background-color: #948f73;
+    position: relative;
+    display: block;
+    align-items: center;
+    padding: 50px;
+    color: #442906;
+    min-height: 100vh;
+}
+
+#about h1 {
+    position: absolute;
+    top: 2%;
+}
+
+#about h2 {
+    position: absolute;
+    top: 8%;
+}
+
+#about h3 {
+    font-weight: 900;
+}
+
+/* Image and background box for "About" */
+.bg-img {
+    background-color: #684314;
+    height: 50vh;
+    width: 18vw;
+    position: absolute;
+    right: 18%;
+    bottom: 30vh;
+}
+
+.me {
+    position: absolute;
+    height: 50vh;
+    width: auto;
+    border: 4px solid #684314;
+    right: 20%;
+    bottom: 25vh;
+    object-fit: cover;
+}
+
+span {
+    font-weight: bold;
+}
+
+.heading {
+    position: relative;
+    top: 0;
+}
+
+.intro {
+    position: absolute;
+    top: 90px;
+    max-width: 50vw;
+}
+
+.education {
+    position: absolute;
+    top: 160px;
+}
+
+/* ---------------- LEARNING EXPERIENCE ---------------- */
+.participation {
+    margin-top: 30px;
+}
+
+.experience-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 50vw;
+}
+
+.exp-card {
+    width: 280px;
+    height: 200px;
+    background: #684314;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.exp-card:hover {
+    transform: scale(1.05);
+}
+
+.exp-card-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.exp-card-content h3 {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #684314;
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+.exp-card-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+/* Hover Effect */
+.exp-card:hover .exp-card-content h3 {
+    opacity: 0;
+}
+
+.exp-card:hover .exp-card-content img {
+    opacity: 1;
+}
+
+/* ---------------- PROJECTS SECTION ---------------- */
+#projects{
+    min-height: 75vh;
+    display: block;
+}
+
+.projects-section {
+    display: block;
+    background-color: #788f68;
+    padding: 80px 100px;
+    color: #fff;
+    text-align: left;
+}
+
+/* Title + paragraph block */
+.projects-header {
+    max-width: 800px;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.3em;
+    margin-bottom: 15px;
+    color: #fefefe;
+    letter-spacing: 1px;
+}
+
+.projects-intro {
+    color: #f5f1e3;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 60px;
+}
+
+/* Project cards container */
+.projects-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Individual card design */
+.project-card {
+    width: 300px;
+    height: 400px;
+    background: #f5f1e3;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effects */
+.project-card:hover {
+    color: #fff;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Card hover background image */
+.project-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Images for each project */
+.project-card:nth-child(1)::before {
+    background-image: url('images/cover-preview1.png');
+}
+
+.project-card:nth-child(2)::before {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712109.png');
+}
+
+.project-card:nth-child(3)::before {
+    background-image: url('images/Screenshot 2025-10-28 170053.png');
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Card text styling */
+.card-content {
+    z-index: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.card-content h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.card-content p {
+    font-size: 1em;
+    color: #444;
+}
+
+/* ---------------- CONTACT ---------------- */
+#contact {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c3d69c;
+    height: 18vh; /* Confirmed 18vh */
+    width: 100vw;
+}
+
+.contact-head {
+    padding-top: 25px; /* Adjusted to fit 18vh */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.social-links {
+    margin-top: 5px; /* Adjusted to fit 18vh */
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.social-links a {
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #815217;
+    color: #ffeddc;
+    height: 15vh;
+}
+
+/* ==================================================================== */
+/* ------------------------ RESPONSIVENESS (Media Queries) ------------------------ */
+/* ==================================================================== */
+
+/* New Media Query for better About Section layout at 1100px */
+@media (max-width: 1100px) {
+    /* ABOUT SECTION: Adjust positioning to prevent overlap on mid-screens */
+    .intro {
+        max-width: 55vw; /* Give intro text more space */
+        top: 80px;
+    }
+
+    .education {
+        top: 210px; /* Push education section down */
+    }
+    
+    .experience-container {
+        max-width: 55vw;
+        justify-content: flex-start;
+    }
+    
+    /* Move image closer to center/reduce size to avoid large gaps or overflow */
+    .bg-img {
+        right: 8%;
+        width: 20vw;
+        height: 45vh;
+    }
+
+    .me {
+        right: 10%;
+        height: 45vh;
+        bottom: 25vh;
+    }
+}
+
+
+/* Media Query for Tablets and smaller desktops (Max width: 1024px) */
+@media (max-width: 1024px) {
+    /* HEADER & NAVBAR */
+    nav {
+        column-gap: 25px;
+        padding-right: 20px;
+    }
+
+    /* HOME SECTION */
+    .intro-box {
+        left: 5%;
+        padding: 1.5rem 2rem;
+        width: 400px;
+    }
+
+    .intro-box h1 {
+        font-size: 1.8em;
+    }
+
+    .intro-box p {
+        font-size: 1em;
+    }
+
+    /* ABOUT SECTION: Adjusting positioning for tablet view */
+    #about {
+        padding: 40px;
+    }
+
+    .bg-img {
+        right: 10%;
+        width: 25vw;
+    }
+
+    .me {
+        right: 12%;
+        height: 40vh;
+        bottom: 30vh;
+    }
+
+    .intro {
+        max-width: 45vw;
+        top: 80px;
+    }
+
+    .education {
+        top: 200px;
+    }
+
+    .experience-container {
+        max-width: 45vw;
+        justify-content: flex-start;
+    }
+
+    .exp-card {
+        width: 250px;
+        height: 180px;
+    }
+
+    /* PROJECTS SECTION */
+    .projects-section {
+        padding: 60px 50px;
+    }
+
+    .project-card {
+        width: 250px;
+        height: 350px;
+    }
+    
+    /* CONTACT SECTION */
+    #contact {
+        height: 18vh; /* Keeping the smaller height */
+    }
+    .contact-head {
+        padding-top: 20px;
+    }
+    .social-links {
+        margin-top: 5px;
+    }
+}
+
+
+/* Media Query for Mobile Devices (Max width: 768px) */
+@media (max-width: 768px) {
+    /* HEADER & NAVBAR */
+    header {
+        top: 0;
+        height: 10vh;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(5px);
+    }
+
+    nav {
+        justify-content: space-around;
+        padding: 0 10px;
+        column-gap: 0;
+    }
+
+    nav i {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+        padding: 0.5rem;
+    }
+
+    /* HOME SECTION */
+    #home {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #home img {
+        opacity: 0.5;
+    }
+
+    .intro-box {
+        position: static;
+        margin-top: -50%;
+        left: auto;
+        top: auto;
+        padding: 1.5rem;
+        width: 90%;
+        max-width: 90%;
+    }
+
+    .intro-box h1 {
+        font-size: 1.6em;
+    }
+
+    /* ABOUT SECTION: Mobile Vertical Flow */
+    #about {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .bg-img {
+        display: none;
+    }
+
+    .me-img {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .me {
+        display: block;
+        position: static;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #684314;
+    }
+
+    .about-heading {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .heading {
+        margin-bottom: 10px;
+    }
+
+    .intro {
+        position: static;
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+
+    .education {
+        position: static;
+        width: 100%;
+        text-align: left;
+        padding-left: 10px;
+        margin-bottom: 30px;
+    }
+
+    .edu-item {
+        margin-bottom: 15px;
+    }
+
+    /* Learning Experiences */
+    .experience-container {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .exp-card {
+        width: 90%;
+        height: 150px;
+    }
+
+    /* PROJECTS SECTION */
+    .projects-section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .projects-header {
+        margin: 0 auto 30px;
+    }
+
+    .projects-intro {
+        font-size: 1em;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-card {
+        width: 90%;
+        max-width: 400px;
+        height: 250px;
+        margin: 0 auto;
+    }
+
+    /* CONTACT SECTION */
+    #contact {
+        height: 18vh; /* Keeping the smaller height for mobile */
+        padding-top: 15px; /* Adjusted padding for small screen */
+    }
+    
+    .contact-head {
+        padding-top: 0;
+        font-size: 18px; /* Slightly smaller font for better fit */
+    }
+    
+    .social-links {
+        margin-top: 5px;
+        font-size: 1.8rem; /* Slightly smaller icons for better fit */
+    }
+
+    /* FOOTER */
+    footer {
+        height: 10vh;
+        padding: 10px;
+        font-size: 0.8em;
+    }
+}
+
+/* Original styles from before the media queries */
+@media (max-width: 900px) {
+    .projects-section {
+        padding: 60px 40px;
+        text-align: center;
+    }
+
+    .projects-header {
+        text-align: center;
+        margin: 0 auto 40px;
+    }
+
+    .projects-container {
+        justify-content: center;
+    }
+}
