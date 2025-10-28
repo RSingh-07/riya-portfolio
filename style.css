@@ -1,8 +1,8 @@
+/* ---------------- GLOBAL STYLES ---------------- */
 body {
     margin: 0;
     font-family: Arial;
 }
-
 
 /* ---------------- HEADER & NAVBAR ---------------- */
 header {
@@ -28,7 +28,7 @@ nav i {
     font-size: 2rem;
 }
 
-/* Glow effect on nav links */
+/* Glow effect */
 nav a {
     position: relative;
     display: inline-block;
@@ -100,9 +100,7 @@ section {
     width: 450px;
     max-width: 90%;
     word-wrap: break-word;
-    overflow-wrap: break-word;
     box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transition: box-shadow 0.3s ease-in-out;
     animation: rainbowGlow 4s linear infinite alternate;
 }
 
@@ -144,18 +142,11 @@ section {
     z-index: -1;
     filter: blur(5px);
     border-radius: 12px;
-    opacity: 1;
     animation: glowing 20s linear infinite;
 }
 
 .download-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.download-btn i {
-    margin-left: 0.5rem;
-    color: #684314;
 }
 
 /* ---------------- ABOUT SECTION ---------------- */
@@ -169,21 +160,6 @@ section {
     min-height: 100vh;
 }
 
-#about h1 {
-    position: absolute;
-    top: 2%;
-}
-
-#about h2 {
-    position: absolute;
-    top: 8%;
-}
-
-#about h3 {
-    font-weight: 900;
-}
-
-/* Image and background box for "About" */
 .bg-img {
     background-color: #684314;
     height: 50vh;
@@ -201,15 +177,6 @@ section {
     right: 20%;
     bottom: 25vh;
     object-fit: cover;
-}
-
-span {
-    font-weight: bold;
-}
-
-.heading {
-    position: relative;
-    top: 0;
 }
 
 .intro {
@@ -246,18 +213,11 @@ span {
     overflow: hidden;
     position: relative;
     text-decoration: none;
-    cursor: pointer;
     transition: transform 0.3s ease;
 }
 
 .exp-card:hover {
     transform: scale(1.05);
-}
-
-.exp-card-content {
-    position: relative;
-    width: 100%;
-    height: 100%;
 }
 
 .exp-card-content h3 {
@@ -269,9 +229,7 @@ span {
     background: #684314;
     color: #fff;
     font-size: 1.3rem;
-    font-weight: 600;
     transition: opacity 0.4s ease;
-    z-index: 2;
 }
 
 .exp-card-content img {
@@ -280,10 +238,8 @@ span {
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.4s ease;
-    z-index: 1;
 }
 
-/* Hover Effect */
 .exp-card:hover .exp-card-content h3 {
     opacity: 0;
 }
@@ -293,7 +249,7 @@ span {
 }
 
 /* ---------------- PROJECTS SECTION ---------------- */
-#projects{
+#projects {
     min-height: 75vh;
     display: block;
 }
@@ -303,41 +259,16 @@ span {
     background-color: #788f68;
     padding: 80px 100px;
     color: #fff;
-    text-align: left;
 }
 
-/* Title + paragraph block */
-.projects-header {
-    max-width: 800px;
-    margin-bottom: 50px;
-}
-
-.section-title {
-    font-size: 2.3em;
-    margin-bottom: 15px;
-    color: #fefefe;
-    letter-spacing: 1px;
-}
-
-.projects-intro {
-    color: #f5f1e3;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    opacity: 0.95;
-    margin-bottom: 60px;
-}
-
-/* Project cards container */
 .projects-container {
     display: flex;
     justify-content: center;
     align-items: stretch;
     gap: 40px;
     flex-wrap: wrap;
-    width: 100%;
 }
 
-/* Individual card design */
 .project-card {
     width: 300px;
     height: 400px;
@@ -349,19 +280,16 @@ span {
     align-items: center;
     justify-content: center;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease-in-out;
 }
 
-/* Hover effects */
 .project-card:hover {
     color: #fff;
     transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Card hover background image */
 .project-card::before {
     content: "";
     position: absolute;
@@ -375,15 +303,12 @@ span {
     transition: opacity 0.4s ease;
 }
 
-/* Images for each project */
 .project-card:nth-child(1)::before {
     background-image: url('images/cover-preview1.png');
 }
-
 .project-card:nth-child(2)::before {
     background-image: url('https://cdn-icons-png.flaticon.com/512/4712/4712109.png');
 }
-
 .project-card:nth-child(3)::before {
     background-image: url('images/Screenshot 2025-10-28 170053.png');
 }
@@ -392,52 +317,39 @@ span {
     opacity: 1;
 }
 
-/* Card text styling */
-.card-content {
-    z-index: 1;
-    padding: 20px;
-    text-align: center;
-}
-
-.card-content h3 {
-    font-size: 1.3em;
-    margin-bottom: 10px;
-}
-
-.card-content p {
-    font-size: 1em;
-    color: #444;
-}
-
-/* ---------------- CONTACT ---------------- */
+/* ---------------- CONTACT SECTION ---------------- */
 #contact {
-    position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     background-color: #c3d69c;
-    height: 18vh; /* Confirmed 18vh */
-    width: 100vw;
+    height: 18vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .contact-head {
-    padding-top: 25px; /* Adjusted to fit 18vh */
-    text-align: center;
     font-size: 20px;
     font-weight: 700;
+    line-height: 1;
+    margin: 0;
 }
 
 .social-links {
-    margin-top: 5px; /* Adjusted to fit 18vh */
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 2rem;
+    margin-top: 8px;
+    gap: 15px;
 }
 
 .social-links a {
-    text-decoration: none;
     color: black;
-    margin-left: 10px;
+    text-decoration: none;
 }
 
 /* ---------------- FOOTER ---------------- */
@@ -450,126 +362,21 @@ footer {
     height: 15vh;
 }
 
-/* ==================================================================== */
-/* ------------------------ RESPONSIVENESS (Media Queries) ------------------------ */
-/* ==================================================================== */
+/* ---------------- RESPONSIVE DESIGN ---------------- */
 
-/* New Media Query for better About Section layout at 1100px */
-@media (max-width: 1100px) {
-    /* ABOUT SECTION: Adjust positioning to prevent overlap on mid-screens */
-    .intro {
-        max-width: 55vw; /* Give intro text more space */
-        top: 80px;
-    }
-
-    .education {
-        top: 210px; /* Push education section down */
-    }
-    
-    .experience-container {
-        max-width: 55vw;
-        justify-content: flex-start;
-    }
-    
-    /* Move image closer to center/reduce size to avoid large gaps or overflow */
-    .bg-img {
-        right: 8%;
-        width: 20vw;
-        height: 45vh;
-    }
-
-    .me {
-        right: 10%;
-        height: 45vh;
-        bottom: 25vh;
-    }
-}
-
-
-/* Media Query for Tablets and smaller desktops (Max width: 1024px) */
+/* Tablets */
 @media (max-width: 1024px) {
-    /* HEADER & NAVBAR */
-    nav {
-        column-gap: 25px;
-        padding-right: 20px;
-    }
-
-    /* HOME SECTION */
     .intro-box {
-        left: 5%;
-        padding: 1.5rem 2rem;
         width: 400px;
     }
-
-    .intro-box h1 {
-        font-size: 1.8em;
-    }
-
-    .intro-box p {
-        font-size: 1em;
-    }
-
-    /* ABOUT SECTION: Adjusting positioning for tablet view */
-    #about {
-        padding: 40px;
-    }
-
-    .bg-img {
-        right: 10%;
-        width: 25vw;
-    }
-
-    .me {
-        right: 12%;
-        height: 40vh;
-        bottom: 30vh;
-    }
-
-    .intro {
-        max-width: 45vw;
-        top: 80px;
-    }
-
-    .education {
-        top: 200px;
-    }
-
-    .experience-container {
-        max-width: 45vw;
-        justify-content: flex-start;
-    }
-
-    .exp-card {
-        width: 250px;
-        height: 180px;
-    }
-
-    /* PROJECTS SECTION */
-    .projects-section {
-        padding: 60px 50px;
-    }
-
     .project-card {
         width: 250px;
         height: 350px;
     }
-    
-    /* CONTACT SECTION */
-    #contact {
-        height: 18vh; /* Keeping the smaller height */
-    }
-    .contact-head {
-        padding-top: 20px;
-    }
-    .social-links {
-        margin-top: 5px;
-    }
 }
 
-
-/* Media Query for Mobile Devices (Max width: 768px) */
+/* Mobile */
 @media (max-width: 768px) {
-    /* HEADER & NAVBAR */
     header {
         top: 0;
         height: 10vh;
@@ -580,24 +387,6 @@ footer {
     nav {
         justify-content: space-around;
         padding: 0 10px;
-        column-gap: 0;
-    }
-
-    nav i {
-        font-size: 1.5rem;
-    }
-
-    nav a {
-        font-size: 1.5rem;
-        padding: 0.5rem;
-    }
-
-    /* HOME SECTION */
-    #home {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
     }
 
     #home img {
@@ -607,99 +396,21 @@ footer {
     .intro-box {
         position: static;
         margin-top: -50%;
-        left: auto;
-        top: auto;
         padding: 1.5rem;
         width: 90%;
-        max-width: 90%;
     }
 
-    .intro-box h1 {
-        font-size: 1.6em;
-    }
-
-    /* ABOUT SECTION: Mobile Vertical Flow */
     #about {
-        display: flex;
         flex-direction: column;
-        padding: 20px;
         text-align: center;
-    }
-
-    .bg-img {
-        display: none;
-    }
-
-    .me-img {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
+        padding: 20px;
     }
 
     .me {
-        display: block;
-        position: static;
         width: 150px;
         height: 150px;
         border-radius: 50%;
-        object-fit: cover;
         border: 4px solid #684314;
-    }
-
-    .about-heading {
-        position: static;
-        width: 100%;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
-    .heading {
-        margin-bottom: 10px;
-    }
-
-    .intro {
-        position: static;
-        max-width: 100%;
-        padding: 0 10px;
-        text-align: left;
-        margin-bottom: 20px;
-    }
-
-    .education {
-        position: static;
-        width: 100%;
-        text-align: left;
-        padding-left: 10px;
-        margin-bottom: 30px;
-    }
-
-    .edu-item {
-        margin-bottom: 15px;
-    }
-
-    /* Learning Experiences */
-    .experience-container {
-        max-width: 100%;
-        justify-content: center;
-    }
-
-    .exp-card {
-        width: 90%;
-        height: 150px;
-    }
-
-    /* PROJECTS SECTION */
-    .projects-section {
-        padding: 50px 20px;
-        text-align: center;
-    }
-
-    .projects-header {
-        margin: 0 auto 30px;
-    }
-
-    .projects-intro {
-        font-size: 1em;
     }
 
     .projects-container {
@@ -714,43 +425,22 @@ footer {
         margin: 0 auto;
     }
 
-    /* CONTACT SECTION */
     #contact {
-        height: 18vh; /* Keeping the smaller height for mobile */
-        padding-top: 15px; /* Adjusted padding for small screen */
-    }
-    
-    .contact-head {
-        padding-top: 0;
-        font-size: 18px; /* Slightly smaller font for better fit */
-    }
-    
-    .social-links {
-        margin-top: 5px;
-        font-size: 1.8rem; /* Slightly smaller icons for better fit */
+        height: 18vh;
+        padding: 0;
     }
 
-    /* FOOTER */
+    .contact-head {
+        font-size: 18px;
+    }
+
+    .social-links {
+        font-size: 1.8rem;
+        margin-top: 5px;
+    }
+
     footer {
         height: 10vh;
-        padding: 10px;
         font-size: 0.8em;
-    }
-}
-
-/* Original styles from before the media queries */
-@media (max-width: 900px) {
-    .projects-section {
-        padding: 60px 40px;
-        text-align: center;
-    }
-
-    .projects-header {
-        text-align: center;
-        margin: 0 auto 40px;
-    }
-
-    .projects-container {
-        justify-content: center;
     }
 }
